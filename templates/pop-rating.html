@@ -1,0 +1,26 @@
+{% extends "app1.html" %}
+{% block content %}
+<p style="margin-left:5%;margin-top:20px;font-size:20px; font-family: cursive;font-weight: bold;">Top Movies Based on
+  Popularity and Rating: </p>
+
+<table class="table table-striped table-dark" border="1.5px black"
+  style="margin-left:5%;margin-top:3vh;width: 90%;position: relative;" border-radius="5 em">
+
+  <tr style="height:50px">
+    <th style="vertical-align: middle;text-align: center;">Title</th>
+    <th style="vertical-align: middle;text-align: center;">Popularity</th>
+    <th style="vertical-align: middle;text-align: center;">Vote Count</th>
+    <th style="vertical-align: middle;text-align: center;">Weighted Rating</th>
+  </tr>
+  {% for key, value in app1.iterrows() %}
+  <tr style="height:50px;"">
+            <td style=" vertical-align: middle;text-align: center;">{{value['title']}}</td>
+    <td style="vertical-align: middle;text-align: center;">{{value['popularity']}}</td>
+    <td style="vertical-align: middle;text-align: center;">{{value['vote_count']}}</td>
+    <td style="vertical-align: middle;text-align: center;">{{value['wr']}}</td>
+  </tr>
+
+  {% endfor%}
+</table>
+<br><br><br>
+{% endblock %}

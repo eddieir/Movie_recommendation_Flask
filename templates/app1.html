@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="{{ url_for('static', filename = 'bootstrap.css') }}" rel="stylesheet">
+  <title>Recommender System</title>
+</head>
+
+<body>
+  <div class="effect2">
+    <div class="logo">
+      <p><a href="{{ url_for('recom') }}">Movie Recommendation System</a></p>
+    </div>
+
+    <div class="linker">
+      <ul class="nav">
+        <li class="navli"><a target="_blank" href="https://www.kaggle.com/rounakbanik/the-movies-dataset">Dataset</a>
+        </li>
+        <li class="navli"><a href="{{ url_for('links') }}">Links</a></li>
+        <li class="navli"><a href="#">Credits</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="logotext alert alert-warning">
+    <q>YouTube’s recommendations drive 70% of what we watch...</q> <br />
+    <q>Nearly 35 percent of all Amazon sales are based on recommendations...</q> <br />
+    <q>Netflix says 80 percent of watched content is based on algorithmic recommendations...</q>
+  </div>
+  <br><br>
+  <p class="alert alert-success" role="alert"
+    style="margin-left: 110px; font-size:25px; font-family: cursive;width:170vh; text-align: center; font-weight: bold;">
+    Types of Recommendation Engines</p><br>
+  <div class="options">
+
+    <ul>
+
+      <li><a class="btn btn-danger" href="{{url_for('pop_rating')}}">Based on Popularity and Rating</a></li>
+      <li><a class="btn btn-success" href="{{url_for('recom2')}}">Based on Genre and Rating</a>
+      <li>
+      <li><a class="btn btn-warning" href="{{url_for('movie_liked')}}">Based on Content of Movies</a></li>
+    </ul>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+
+
+  <div class="footer">
+    <center
+      style="line-height: 5vh; color: rgb(230, 230, 230); font-size: 13px; font-weight: bold;font-family: cursive;">
+      &copy; Peyman Iravani</center>
+  </div>
+  <style>
+    .options {
+      margin-left: 43vh;
+      padding: 0px;
+    }
+
+    .options ul li {
+      margin-left: 15px;
+      font-size: 20px;
+      list-style-type: none;
+      display: inline-block;
+
+    }
+
+    .logotext {
+      font-size: 20px;
+      font-family: cursive;
+      width: 170vh;
+      margin-left: 110px;
+      margin-top: 50px;
+
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .effect2 {
+      background: white;
+      box-shadow: 0 2px 20px #777;
+      height: 10vh;
+      z-index: 10;
+    }
+
+    .logo {
+      color: red;
+      font-family: cursive;
+      margin-left: 20px;
+      line-height: 10vh;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 22px;
+      text-shadow: 2px 2px whitesmoke;
+    }
+
+    .linker {
+      float: right;
+      margin-right: 20px;
+      margin-top: -13.3vh;
+    }
+
+    .ul {
+
+      float: right;
+      list-style-type: none;
+
+    }
+
+    .navli {
+      color: rgb(99, 99, 99);
+      padding: 30px;
+      font-family: cursive;
+
+      display: block;
+
+    }
+  </style>
+
+</html>

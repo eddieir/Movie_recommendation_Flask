@@ -1,0 +1,13 @@
+{% extends "app1.html" %}
+
+{% block content %}
+<form action="{{url_for('genre_rating')}}" method="POST" name="genre_choice" class="form-group"
+  style="margin-top:3vh;margin-left:48vh;padding: 10px;">
+  <p class="alert alert-success" role="alert" style="width: 70%; text-align: center">Get Recommendation Based on Genre
+    and Popularity</p>
+  <input type="text" name="genre_choice" class="form-control" style="width: 70%; box-shadow: 2px 2px whitesmoke;">
+  <input type="submit" name="submit" class="btn btn-primary"
+    style="width: 70%;margin-top: 10px; box-shadow: 2px 2px whitesmoke;">
+</form>
+<br><br><br>
+{% endblock %}
